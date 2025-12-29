@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Remove any green elements that might appear */
+* {
+  --tw-green-400: transparent !important;
+  --tw-green-500: transparent !important;
+}
+
+@layer utilities {
+    .clip-path-custom {
+      clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
+    }
+    .clip-path-custom-2 {
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100%);
+      }
+    .clip-path-custom-3 {
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
+      }
+  }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 200%;
+  animation: marquee 22s linear infinite;
+}
+
+/* Custom animations for concentric circles */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+/* Enhanced pulse animation for better visual effect */
+@keyframes enhanced-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-enhanced-pulse {
+  animation: enhanced-pulse 3s ease-in-out infinite;
+}
+
+/* Orbital animations for tech icons */
+@keyframes orbit-1 {
+  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes orbit-2 {
+  0% { transform: rotate(32deg) translateX(120px) rotate(-32deg); }
+  100% { transform: rotate(392deg) translateX(120px) rotate(-392deg); }
+}
+
+@keyframes orbit-3 {
+  0% { transform: rotate(64deg) translateX(120px) rotate(-64deg); }
+  100% { transform: rotate(424deg) translateX(120px) rotate(-424deg); }
+}
+
+@keyframes orbit-4 {
+  0% { transform: rotate(96deg) translateX(120px) rotate(-96deg); }
+  100% { transform: rotate(456deg) translateX(120px) rotate(-456deg); }
+}
+
+@keyframes orbit-5 {
+  0% { transform: rotate(128deg) translateX(120px) rotate(-128deg); }
+  100% { transform: rotate(488deg) translateX(120px) rotate(-488deg); }
+}
+
+@keyframes orbit-6 {
+  0% { transform: rotate(160deg) translateX(120px) rotate(-160deg); }
+  100% { transform: rotate(520deg) translateX(120px) rotate(-520deg); }
+}
+
+@keyframes orbit-7 {
+  0% { transform: rotate(192deg) translateX(120px) rotate(-192deg); }
+  100% { transform: rotate(552deg) translateX(120px) rotate(-552deg); }
+}
+
+@keyframes orbit-8 {
+  0% { transform: rotate(224deg) translateX(120px) rotate(-224deg); }
+  100% { transform: rotate(584deg) translateX(120px) rotate(-584deg); }
+}
+
+@keyframes orbit-9 {
+  0% { transform: rotate(256deg) translateX(120px) rotate(-256deg); }
+  100% { transform: rotate(616deg) translateX(120px) rotate(-616deg); }
+}
+
+@keyframes orbit-10 {
+  0% { transform: rotate(288deg) translateX(120px) rotate(-288deg); }
+  100% { transform: rotate(648deg) translateX(120px) rotate(-648deg); }
+}
+
+@keyframes orbit-11 {
+  0% { transform: rotate(320deg) translateX(120px) rotate(-320deg); }
+  100% { transform: rotate(680deg) translateX(120px) rotate(-680deg); }
+}
+
+.animate-orbit-1 { animation: orbit-1 20s linear infinite; }
+.animate-orbit-2 { animation: orbit-2 20s linear infinite; }
+.animate-orbit-3 { animation: orbit-3 20s linear infinite; }
+.animate-orbit-4 { animation: orbit-4 20s linear infinite; }
+.animate-orbit-5 { animation: orbit-5 20s linear infinite; }
+.animate-orbit-6 { animation: orbit-6 20s linear infinite; }
+.animate-orbit-7 { animation: orbit-7 20s linear infinite; }
+.animate-orbit-8 { animation: orbit-8 20s linear infinite; }
+.animate-orbit-9 { animation: orbit-9 20s linear infinite; }
+.animate-orbit-10 { animation: orbit-10 20s linear infinite; }
+.animate-orbit-11 { animation: orbit-11 20s linear infinite; }
+
+/* Floating animation for tech icons (keeping for reference) */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+  
