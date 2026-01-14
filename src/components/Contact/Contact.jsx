@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import roshanPhoto from '../../assets/vivekpics.png';
+import { FaWhatsapp, FaPhone, FaEnvelope, FaLinkedin } from 'react-icons/fa6';
 
 const Contact = () => {
   const form = useRef();
@@ -108,6 +109,52 @@ const Contact = () => {
             I&apos;m passionate about technology and always excited to collaborate on interesting projects. 
             Feel free to reach out!
           </p>
+        </div>
+
+        {/* Quick Contact Section - For Recruiters */}
+        <div className="mb-12 bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 backdrop-blur-sm rounded-2xl p-8 border border-indigo-400/30 hover:border-indigo-400/50 transition-all duration-300">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">Quick Contact - Reach Me Directly ⚡</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/918434487300?text=Hi%20Vivek%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-3 px-6 py-4 rounded-lg bg-green-500/20 border border-green-500/50 hover:bg-green-500/30 hover:border-green-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+            >
+              <FaWhatsapp className="text-2xl text-green-400 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-semibold text-sm sm:text-base">WhatsApp</span>
+            </a>
+
+            {/* Phone Call Button */}
+            <a
+              href="tel:+918434487300"
+              className="group flex items-center justify-center gap-3 px-6 py-4 rounded-lg bg-blue-500/20 border border-blue-500/50 hover:bg-blue-500/30 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <FaPhone className="text-2xl text-blue-400 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-semibold text-sm sm:text-base">Call</span>
+            </a>
+
+            {/* Email Button */}
+            <a
+              href="mailto:vivekkumarlpu1@gmail.com?subject=Opportunity%20for%20Vivek&body=Hi%20Vivek%2C%0A%0AI%20have%20an%20exciting%20opportunity%20for%20you.%0A%0ABest%20regards"
+              className="group flex items-center justify-center gap-3 px-6 py-4 rounded-lg bg-red-500/20 border border-red-500/50 hover:bg-red-500/30 hover:border-red-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/20"
+            >
+              <FaEnvelope className="text-2xl text-red-400 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-semibold text-sm sm:text-base">Email</span>
+            </a>
+
+            {/* LinkedIn Button */}
+            <a
+              href="https://www.linkedin.com/in/vivekkr-gupta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-3 px-6 py-4 rounded-lg bg-cyan-500/20 border border-cyan-500/50 hover:bg-cyan-500/30 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/20"
+            >
+              <FaLinkedin className="text-2xl text-cyan-400 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-semibold text-sm sm:text-base">LinkedIn</span>
+            </a>
+          </div>
         </div>
 
         {/* Contact Content - Full Width Grid */}

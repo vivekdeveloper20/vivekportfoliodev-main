@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
+import SocialShare from "../SocialShare/SocialShare";
 
 const Footer = () => {
   return (
@@ -60,6 +61,11 @@ const Footer = () => {
 
           {/* Divider */}
           <div className="w-24 h-0.5 bg-gradient-to-r from-cyan-500 to-indigo-500 mx-auto mb-4 rounded-full"></div>
+
+          {/* Social Share Section */}
+          <div className="flex justify-center mb-4">
+            <SocialShare />
+          </div>
 
           {/* Copyright Text */}
           <div className="space-y-1">

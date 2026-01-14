@@ -11,6 +11,8 @@ import Certifications, { Contributions } from "./components/Education/Certificat
 import AnimatedStats from "./components/Stats/AnimatedStats";
 import CommandPalette from "./components/CommandPalette/CommandPalette";
 import AnimatedBackground from "./components/AnimatedBackground/AnimatedBackground";
+import Blog from "./components/Blog/Blog";
+import SocialShare from "./components/SocialShare/SocialShare";
 
 const App = () => {
   return (
@@ -37,9 +39,11 @@ const App = () => {
         <Certifications />
         <Contributions />
         <Education />
+        <Blog />
         <Contact />
         <Footer />
         <CommandPalette />
+        <SocialShare variant="floating" />
       </div>
     </div>
   );
