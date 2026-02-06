@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import roshanPhoto from '../../assets/vivekpics.png';
+import vivekPhoto from '../../assets/vivekpics.png';
 
 const Contact = () => {
   const form = useRef();
@@ -10,7 +10,7 @@ const Contact = () => {
 
   // Initialize EmailJS with your public key
   useEffect(() => {
-    emailjs.init("PgO4nFD7JLFVSO5Bw"); // Updated public key
+    emailjs.init("q1aiHSHVD9C9rFwvI"); // Updated public key
   }, []);
 
   const sendEmail = (e) => {
@@ -20,10 +20,10 @@ const Contact = () => {
     // EmailJS configuration for sending to your Gmail
     emailjs
       .sendForm(
-        "service_36a4bpn",        // Your new SMTP EmailJS service ID
-        "template_g6wclmi",       // Updated to your actual EmailJS template ID
+        "service_aasbmm7",        // Your new SMTP EmailJS service ID
+        "template_1u4c4ye",       // Updated to your actual EmailJS template ID
         form.current,
-        "PgO4nFD7JLFVSO5Bw"        // Updated EmailJS public key
+        "q1aiHSHVD9C9rFwvI"        // Updated EmailJS public key
       )
       .then(
         (result) => {
@@ -64,8 +64,8 @@ const Contact = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/file/d/16V15Bm3odebbVNaD_pSb87Xu_82irLvk/view?usp=sharing';
-    link.download = 'Roshan_Gupta_CV.pdf';
+    link.href = 'https://drive.google.com/file/d/1soacWfceREUTZHzZiiOAsm1gq9CbH7Tp/view?usp=drive_link';
+    link.download = 'Vivek_Kumar_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -111,7 +111,7 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <div className="relative">
                   <img 
-                    src={roshanPhoto}
+                    src={vivekPhoto}
                     alt="Vivek Kumar" 
                     className="w-16 h-16 rounded-full object-cover border-2 border-yellow-400/50 shadow-md hover:scale-105 transition-transform duration-300"
                   />
@@ -119,7 +119,7 @@ const Contact = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-white mb-1">Vivek Kumar</h3>
-                  <p className="text-yellow-300 font-medium text-sm mb-1">Third-Year Computer Science Student</p>
+                  <p className="text-yellow-300 font-medium text-sm mb-1">Final Year Computer Science Student</p>
                   <p className="text-gray-400 text-xs">
                     Full Stack Developer & Technology Enthusiast
                   </p>

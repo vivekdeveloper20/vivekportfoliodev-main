@@ -10,22 +10,45 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messageRef = useRef(null);
 
+  const emailJsConfig = {
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    toEmail: import.meta.env.VITE_EMAILJS_TO_EMAIL,
+  };
+
   // Initialize EmailJS with your public key
   useEffect(() => {
-    emailjs.init("PgO4nFD7JLFVSO5Bw"); // Updated public key
-  }, []);
+    if (emailJsConfig.publicKey) {
+      emailjs.init(emailJsConfig.publicKey);
+    }
+  }, [emailJsConfig.publicKey]);
 
   const sendEmail = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
+    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
+      setIsLoading(false);
+      toast.error("Email service is not configured. Please try again later.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
+      return;
+    }
+
     // EmailJS configuration for sending to your Gmail
     emailjs
       .sendForm(
-        "service_36a4bpn",        // Your new SMTP EmailJS service ID
-        "template_g6wclmi",       // Your actual EmailJS template ID
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
         form.current,
-        "PgO4nFD7JLFVSO5Bw"        // Updated EmailJS public key
+        emailJsConfig.publicKey
       )
       .then(
         (result) => {
@@ -253,6 +276,7 @@ const Contact = () => {
             </h3>
 
             <form ref={form} onSubmit={sendEmail} className="space-y-5">
+              <input type="hidden" name="to_email" value={emailJsConfig.toEmail || ""} />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="group">
                   <input
